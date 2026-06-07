@@ -1,6 +1,7 @@
 # 🏛️ Art Hub — Harvard Museum Exploration
 
 A high-performance, minimal, and fully typed web application built to explore the rich archives of the Harvard Art Museums. This project is crafted with a focus on **Zero-Waste Code**, clean architectural patterns, and seamless responsive design.
+
 🔗 **Live Demo: https://art-hub-eight.vercel.app/
 
 
