@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { ArtObject } from "@/utils/type";
 import { getHarvardArt, getCultures, ArtFilters } from "@/utils/api";
@@ -7,7 +7,7 @@ import HeroSection from "@/components/HeroSection";
 import FilterBar from "@/components/FilterBar";
 import ArtGrid from "@/components/ArtGrid";
 
-const HarvardArtPage = () => {
+const ArtMuseumContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -103,4 +103,10 @@ const HarvardArtPage = () => {
   );
 };
 
-export default HarvardArtPage;
+export default function HarvardArtPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-museum-dark" />}>
+      <ArtMuseumContent />
+    </Suspense>
+  );
+}
