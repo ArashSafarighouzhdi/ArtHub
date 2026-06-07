@@ -82,7 +82,10 @@ const ArtMuseumContent = () => {
         filters={filters}
         cultures={cultures}
         loadingCultures={loadingCultures}
-        onFilterChange={(newFilters) => setFilters(newFilters)}
+        onFilterChange={(newFilters) => {
+          setFilters(newFilters);
+          handleFetch(1, newFilters);
+        }}
       />
 
       <HeroSection
